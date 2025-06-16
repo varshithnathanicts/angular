@@ -1,0 +1,79 @@
+/* General layout for main content */
+main {
+  width: 90%;
+  max-width: 50rem;
+  margin: 2.5rem auto;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2rem;
+}
+
+/* User list styles */
+#users {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers user cards horizontally */
+  gap: 0.5rem;
+}
+
+/* Individual user container */
+#users li {
+  width: 100%;
+  max-width: 20rem; /* limits stretch */
+}
+
+/* Ensure app-user renders as block element */
+app-user {
+  display: block;
+}
+
+/* Styling the user button */
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: #f4f4f4;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+/* Hover effect for button */
+button:hover {
+  background-color: #e0e0e0;
+}
+
+/* User avatar image */
+button img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Optional: fallback text */
+#fallback {
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  main {
+    margin: 4rem auto;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  #fallback {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
