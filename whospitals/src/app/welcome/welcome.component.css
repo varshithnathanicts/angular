@@ -1,0 +1,47 @@
+.welcome-wrapper {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .left-side, .right-side {
+    flex: 1; /* Take 50% each */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-side img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .right-side {
+    flex-direction: column;
+    background-color: #f2f9ff;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .right-side h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .right-side button {
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .right-side button:hover {
+    background-color: #0056b3;
+  }
+  
