@@ -1,0 +1,11 @@
+<h2>Book Appointment</h2>
+<p><strong>User:</strong> {{ username }}</p>
+<p><strong>Doctor:</strong> {{ doctorName }}</p>
+<p><strong>Specialization:</strong> {{ specialization }}</p>
+
+<h3>Available Time Slots</h3>
+<ul>
+  <li *ngFor="let slot of timeSlots">
+    {{ slot }} <button>Confirm</button>
+  </li>
+</ul>

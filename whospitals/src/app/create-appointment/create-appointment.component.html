@@ -1,0 +1,6 @@
+<h2>Select a Doctor</h2>
+<div *ngFor="let doc of doctors" class="doctor-card">
+  <p><strong>{{ doc.name }}</strong></p>
+  <p>Specialization: {{ doc.specialization }}</p>
+  <button (click)="bookAppointment(doc)">Book Me</button>
+</div>

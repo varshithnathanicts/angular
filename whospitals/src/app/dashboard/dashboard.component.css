@@ -1,4 +1,7 @@
-.dashboard-wrapper {
+
+  
+
+ .dashboard-wrapper {
     display: flex;
     height: 100vh;
     background-color: #f8fbff;
@@ -66,4 +69,4 @@
   .button-stack button:hover {
     background-color: #0056b3;
   }
-  
+   

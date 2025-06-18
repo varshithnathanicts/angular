@@ -19,10 +19,14 @@ export class LoginComponent {
 
   login() {
     const body = { username: this.username, password: this.password };
+
     this.http.post('http://localhost:8080/api/auth/login', body, { responseType: 'text' })
       .subscribe({
         next: () => {
           localStorage.setItem('loggedIn', 'true');
+          localStorage.setItem('username', this.username);
+          localStorage.setItem('password', this.password);
+          localStorage.setItem('imageUrl', 'assets/default-profile.png'); // default image
           this.router.navigate(['/dashboard']);
         },
         error: () => {

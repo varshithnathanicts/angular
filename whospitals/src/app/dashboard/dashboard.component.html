@@ -1,16 +1,20 @@
+
 <div class="dashboard-wrapper">
     <div class="left-side">
-      <img src="assets\dashboardillustration.jpeg" alt="Hospital dashboard visual" />
+      <img src="assets/dashboardillustration.jpeg" alt="Hospital dashboard visual" />
     </div>
     <div class="right-side">
       <h1>Manage Your Hospital Appointments</h1>
-      <p>Easily schedule, update, or cancel appointments with just a click. Keep your booking process smooth, efficient, and stress-free.</p>
+      <p>
+        Easily schedule, update, or cancel appointments with just a click.
+        Keep your booking process smooth, efficient, and stress-free.
+      </p>
       <div class="button-stack">
-        <button>Create</button>
+        <button (click)="goToCreate()">Create</button>
         <button>Update</button>
         <button>Delete</button>
+        <button (click)="goToProfile()">Profile</button>
       </div>
-      
     </div>
   </div>
   

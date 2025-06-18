@@ -1,0 +1,16 @@
+.profile-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    max-width: 300px;
+    margin-top: 2rem;
+    border-radius: 8px;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
