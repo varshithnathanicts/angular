@@ -1,0 +1,7 @@
+<h2>Appointment Confirmation</h2>
+<p><strong>Patient ID:</strong> {{ appointmentRequest?.patientId }}</p>
+<p><strong>Doctor ID:</strong> {{ appointmentRequest?.doctorId }}</p>
+<p><strong>Date:</strong> {{ appointmentRequest?.appointmentDate }}</p>
+<p><strong>Time:</strong> {{ appointmentRequest?.appointmentTime }}</p>
+
+<button (click)="submitAppointment()">Submit Appointment</button>

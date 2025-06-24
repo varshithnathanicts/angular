@@ -1,0 +1,57 @@
+<!-- <h2>Booking Appointment with {{ doctor?.name }}</h2>
+<p>Specialization: {{ doctor?.specialization }}</p>
+<p>Qualification: {{ doctor?.qualification }}</p>
+
+<h3>Select a date:</h3>
+<div class="date-buttons">
+  <button *ngFor="let date of nextFiveDates">{{ date }}</button>
+</div> -->
+
+<!-- <h2>Booking Appointment with {{ doctor?.name }}</h2>
+<p>Specialization: {{ doctor?.specialization }}</p>
+<p>Qualification: {{ doctor?.qualification }}</p>
+
+<h3>Select a date:</h3>
+<div class="date-buttons">
+  <button *ngFor="let date of nextFiveDates" (click)="selectDate(date)">
+    {{ date }}
+  </button>
+</div> -->
+
+<!-- <h2>Booking Appointment with {{ doctor?.name }}</h2>
+<p>Specialization: {{ doctor?.specialization }}</p>
+<p>Qualification: {{ doctor?.qualification }}</p>
+
+<h3>Select a date:</h3>
+<div class="date-buttons">
+  <button *ngFor="let date of nextFiveDates" (click)="selectDate(date)">
+    {{ date }}
+  </button>
+</div> -->
+
+<h2>Booking Appointment with {{ doctor?.name }}</h2>
+<p>Specialization: {{ doctor?.specialization }}</p>
+<p>Qualification: {{ doctor?.qualification }}</p>
+
+<h3>Select a date:</h3>
+<div class="date-buttons">
+  <button *ngFor="let date of nextFiveDates" (click)="selectDate(date)">
+    {{ date }}
+  </button>
+</div>
+
+<div *ngIf="selectedDate">
+  <h3>Available Slots for {{ selectedDate }}:</h3>
+  <div *ngIf="availableSlots.length > 0; else noSlots">
+    <div class="slot-buttons">
+        <button *ngFor="let slot of availableSlots" (click)="selectSlot(slot)">
+          {{ slot }}
+        </button>
+      </div>
+      
+      
+  </div>
+  <ng-template #noSlots>
+    <p>No slots available for this date.</p>
+  </ng-template>
+</div>

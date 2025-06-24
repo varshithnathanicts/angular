@@ -1,0 +1,92 @@
+/* h2 {
+    color: #00796b;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 2rem auto;
+  }
+  
+  li {
+    background: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  li strong {
+    font-size: 1.2rem;
+    color: #004d40;
+  }
+  
+  li br {
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+   */
+
+   h2 {
+    color: #00796b;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    max-width: 1000px;
+    margin: 2rem auto;
+    list-style: none;
+  }
+  
+  li {
+    background: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .doctor-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .doctor-info {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .doctor-info strong {
+    font-size: 1.2rem;
+    color: #004d40;
+  }
+  
+  p {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  

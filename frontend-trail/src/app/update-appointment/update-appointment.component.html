@@ -1,0 +1,83 @@
+<!-- <h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length > 0; else noAppointments">
+  <ul>
+    <li *ngFor="let appt of appointments">
+      <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+      <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+      <p><strong>Status:</strong> {{ appt.status }}</p>
+      <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
+      <button (click)="editAppointment(appt)">Edit</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found.</p>
+</ng-template> -->
+
+<!-- <h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length > 0; else noAppointments">
+  <ul>
+    <li *ngFor="let appt of appointments">
+      <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+      <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+      <p><strong>Status:</strong> {{ appt.status }}</p>
+      <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
+      <button (click)="editAppointment(appt)">Edit</button>
+      <button class="cancel-btn" (click)="cancelAppointment(appt.appointmentId)">Cancel</button>
+
+    </li>
+  </ul>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found.</p>
+</ng-template> -->
+
+<!-- <h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length > 0; else noAppointments">
+  <ul>
+    <li *ngFor="let appt of appointments">
+      <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+      <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+      <p><strong>Status:</strong> {{ appt.status }}</p>
+      <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
+
+      <div *ngIf="appt.status !== 'Cancelled'; else cancelledMessage">
+        <button (click)="editAppointment(appt)">Edit</button>
+        <button class="cancel-btn" (click)="cancelAppointment(appt.appointmentId)">Cancel</button>
+      </div>
+
+      <ng-template #cancelledMessage>
+        <p style="color: red;"><strong>This appointment has been cancelled.</strong></p>
+      </ng-template>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found.</p>
+</ng-template> -->
+
+<h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length > 0; else noAppointments">
+  <ul>
+    <li *ngFor="let appt of appointments">
+      <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+      <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+      <p><strong>Status:</strong> {{ appt.status }}</p>
+      <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
+
+      <button (click)="editAppointment(appt)">Edit</button>
+      <button class="cancel-btn" (click)="cancelAppointment(appt.appointmentId)">Cancel</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found.</p>
+</ng-template>

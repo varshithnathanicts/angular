@@ -1,0 +1,67 @@
+:host {
+    display: block;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: #01579b;
+  }
+  
+  .cancel-btn {
+    background-color: #e53935;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #b71c1c;
+  }
+  
+  ng-template p {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+  }
+  

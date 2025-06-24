@@ -1,0 +1,62 @@
+<!-- <h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length > 0; else noAppointments">
+  <ul>
+    <li *ngFor="let appt of appointments">
+      <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+      <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+      <p><strong>Status:</strong> {{ appt.status }}</p>
+      <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found.</p>
+</ng-template> -->
+
+<!-- <h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length > 0; else noAppointments">
+  <ul>
+    <li *ngFor="let appt of appointments">
+      <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+      <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+      <p><strong>Status:</strong> {{ appt.status }}</p>
+      <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
+
+      <button *ngIf="appt.status === 'COMPLETED'" (click)="viewPrescription(appt.id)">
+        View Prescription
+      </button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found.</p>
+</ng-template> -->
+
+
+<h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length > 0; else noAppointments">
+  <ul>
+    <li *ngFor="let appt of appointments">
+      <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+      <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+      <p><strong>Status:</strong> {{ appt.status }}</p>
+      <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
+
+      <!-- Replace 'appt.id' with the correct field name -->
+<button *ngIf="appt.status === 'COMPLETED' || appt.status === 'BOOKED'" (click)="viewPrescription(appt.appointmentId)">
+    View Prescription
+  </button>
+  
+      
+    </li>
+  </ul>
+</div>
+
+<ng-template #noAppointments>
+  <p>No appointments found.</p>
+</ng-template>

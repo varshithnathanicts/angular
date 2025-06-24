@@ -1,0 +1,123 @@
+<!-- <div *ngIf="profile">
+    <h2>User Profile</h2>
+    <p><strong>Name:</strong> {{ profile.name }}</p>
+    <p><strong>Email:</strong> {{ profile.email }}</p>
+    <p><strong>Gender:</strong> {{ profile.gender }}</p>
+    <p><strong>Phone:</strong> {{ profile.phone }}</p>
+    <p *ngIf="profile.disease"><strong>Disease:</strong> {{ profile.disease }}</p>
+    <p *ngIf="profile.place"><strong>Place:</strong> {{ profile.place }}</p>
+  </div>
+   -->
+
+   <div *ngIf="profile" class="profile-container">
+    <h2>User Profile</h2>
+  
+    <div *ngIf="!isEditing">
+      <p><strong>Name:</strong> {{ profile.name }}</p>
+      <p><strong>Email:</strong> {{ profile.email }}</p>
+      <p><strong>Gender:</strong> {{ profile.gender }}</p>
+      <p><strong>Phone:</strong> {{ profile.phone }}</p>
+      <p *ngIf="profile.disease"><strong>Disease:</strong> {{ profile.disease }}</p>
+      <p *ngIf="profile.place"><strong>Place:</strong> {{ profile.place }}</p>
+      <button (click)="enableEdit()">Edit</button>
+      <button (click)="deleteProfile()" class="delete-button">Delete Profile</button>
+    </div>
+  
+    <form *ngIf="isEditing" (ngSubmit)="updateProfile()">
+      <label>Name:</label>
+      <input [(ngModel)]="profile.name" name="name" />
+  
+      <label>Email:</label>
+      <input [value]="profile.email" disabled />
+  
+      <label>Gender:</label>
+      <input [(ngModel)]="profile.gender" name="gender" />
+  
+      <label>Phone:</label>
+      <input [(ngModel)]="profile.phone" name="phone" />
+  
+      <label *ngIf="profile.disease">Disease:</label>
+      <input *ngIf="profile.disease" [(ngModel)]="profile.disease" name="disease" />
+  
+      <label *ngIf="profile.place">Place:</label>
+      <input *ngIf="profile.place" [(ngModel)]="profile.place" name="place" />
+  
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  
+<!-- 
+   <div *ngIf="profile" class="profile-container">
+    <h2>User Profile</h2>
+  
+    <div *ngIf="!isEditing">
+      <p><strong>Name:</strong> {{ profile.name }}</p>
+      <p><strong>Email:</strong> {{ profile.email }}</p>
+      <p><strong>Gender:</strong> {{ profile.gender }}</p>
+      <p><strong>Phone:</strong> {{ profile.phone }}</p>
+      <p *ngIf="profile.disease"><strong>Disease:</strong> {{ profile.disease }}</p>
+      <p *ngIf="profile.place"><strong>Place:</strong> {{ profile.place }}</p>
+      <button (click)="enableEdit()">Edit</button>
+    </div>
+  
+    <form *ngIf="isEditing" (ngSubmit)="updateProfile()">
+      <label>Name:</label>
+      <input [(ngModel)]="profile.name" name="name" />
+  
+      <label>Email:</label>
+      <input [value]="profile.email" disabled />
+  
+      <label>Gender:</label>
+      <input [(ngModel)]="profile.gender" name="gender" />
+  
+      <label>Phone:</label>
+      <input [(ngModel)]="profile.phone" name="phone" />
+  
+      <label *ngIf="profile.disease">Disease:</label>
+      <input *ngIf="profile.disease" [(ngModel)]="profile.disease" name="disease" />
+  
+      <label *ngIf="profile.place">Place:</label>
+      <input *ngIf="profile.place" [(ngModel)]="profile.place" name="place" />
+  
+      <button type="submit">Save</button>
+    </form>
+  </div>
+   -->
+
+<!-- 
+   <div *ngIf="profile" class="profile-container">
+    <h2>User Profile</h2>
+  
+    <div *ngIf="!isEditing">
+      <p><strong>Name:</strong> {{ profile.name }}</p>
+      <p><strong>Email:</strong> {{ profile.email }}</p>
+      <p><strong>Gender:</strong> {{ profile.gender }}</p>
+      <p><strong>Phone:</strong> {{ profile.phone }}</p>
+      <p *ngIf="profile.disease"><strong>Disease:</strong> {{ profile.disease }}</p>
+      <p *ngIf="profile.place"><strong>Place:</strong> {{ profile.place }}</p>
+      <button (click)="enableEdit()">Edit</button>
+    </div>
+  
+    <form *ngIf="isEditing" (ngSubmit)="updateProfile()">
+      <label>Name:</label>
+      <input [(ngModel)]="profile.name" name="name" />
+  
+      <label>Email:</label>
+      <input [value]="profile.email" disabled />
+  
+      <label>Gender:</label>
+      <input [(ngModel)]="profile.gender" name="gender" />
+  
+      <label>Phone:</label>
+      <input [(ngModel)]="profile.phone" name="phone" />
+  
+      <label *ngIf="profile.disease">Disease:</label>
+      <input *ngIf="profile.disease" [(ngModel)]="profile.disease" name="disease" />
+  
+      <label *ngIf="profile.place">Place:</label>
+      <input *ngIf="profile.place" [(ngModel)]="profile.place" name="place" />
+  
+      <button type="submit">Save</button>
+    </form>
+  </div> -->
+  

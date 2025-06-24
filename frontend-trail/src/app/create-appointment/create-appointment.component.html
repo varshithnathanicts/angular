@@ -1,0 +1,13 @@
+<h2>Select a Doctor to Book an Appointment</h2>
+<div class="doctor-grid">
+  <div class="doctor-card" *ngFor="let doctor of doctors">
+    <img src="assets/doc1.jpg" alt="{{ doctor.name }}" />
+    <div class="info">
+      <strong>{{ doctor.name }}</strong><br>
+      Gender: {{ doctor.gender }}<br>
+      Specialization: {{ doctor.specialization }}<br>
+      Qualification: {{ doctor.qualification }}
+    </div>
+    <button (click)="bookAppointment(doctor)">Book</button>
+</div>
+</div>

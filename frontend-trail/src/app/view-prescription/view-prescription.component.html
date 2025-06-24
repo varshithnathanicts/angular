@@ -1,0 +1,16 @@
+<h2>Prescription Details</h2>
+
+<div *ngIf="hasData; else noData">
+  <p><strong>Doctor's Notes:</strong> {{ notes }}</p>
+
+  <h3>Medications:</h3>
+  <ul>
+    <li *ngFor="let key of prescriptionKeys">
+      <strong>{{ key }}:</strong> {{ prescription[key] }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noData>
+  <p>No prescription data available or failed to load.</p>
+</ng-template>

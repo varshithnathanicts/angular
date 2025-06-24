@@ -1,0 +1,34 @@
+<!-- <h2>Edit Appointment</h2>
+
+<form (ngSubmit)="updateAppointment()">
+  <label for="date">New Date:</label>
+  <input type="date" id="date" [(ngModel)]="updatedDate" name="date" required />
+
+  <label for="time">New Time:</label>
+  <input type="time" id="time" [(ngModel)]="updatedTime" name="time" required />
+
+  <button type="submit">Update Appointment</button>
+</form> -->
+
+<h2>Edit Appointment</h2>
+
+<form (ngSubmit)="updateAppointment()">
+  <label for="date">New Date:</label>
+  <input type="date" id="date" [(ngModel)]="updatedDate" name="date" (change)="fetchAvailabilitySlots()" required />
+
+  <h3>Available Slots for {{ updatedDate }}</h3>
+  <div *ngIf="availableSlots.length > 0; else noSlots">
+    <div class="slot-buttons">
+      <button type="button" *ngFor="let slot of availableSlots" (click)="updatedTime = slot">
+        {{ slot }}
+      </button>
+    </div>
+  </div>
+  <ng-template #noSlots>
+    <p>No slots available for this date.</p>
+  </ng-template>
+
+  <p><strong>Selected Time:</strong> {{ updatedTime }}</p>
+
+  <button type="submit">Update Appointment</button>
+</form>

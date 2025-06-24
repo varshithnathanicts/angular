@@ -1,0 +1,140 @@
+<!-- <h2>Medical History</h2>
+
+<form (ngSubmit)="addMedicalHistory()" class="history-form">
+  <label>Diagnosis:</label>
+  <textarea [(ngModel)]="newHistory.diagnosis" name="diagnosis" maxlength="1000" required></textarea>
+
+  <label>Allergies:</label>
+  <textarea [(ngModel)]="newHistory.allergies" name="allergies" maxlength="500"></textarea>
+
+  <label>Breathing Conditions:</label>
+  <textarea [(ngModel)]="newHistory.breathingConditions" name="breathingConditions" maxlength="500"></textarea>
+
+  <label>Past Treatments:</label>
+  <textarea [(ngModel)]="newHistory.pastTreatments" name="pastTreatments" maxlength="1000"></textarea>
+
+  <button type="submit">Add History</button>
+</form>
+
+<hr />
+
+<h3>Previous Records</h3>
+<ul>
+  <li *ngFor="let history of medicalHistories">
+    <strong>Diagnosis:</strong> {{ history.diagnosis }}<br />
+    <strong>Allergies:</strong> {{ history.allergies }}<br />
+    <strong>Breathing Conditions:</strong> {{ history.breathingConditions }}<br />
+    <strong>Past Treatments:</strong> {{ history.pastTreatments }}<br />
+    <hr />
+  </li>
+</ul> -->
+<!-- 
+<div class="split-container">
+    <div class="left-panel">
+      <h2>Medical History</h2>
+      <form (ngSubmit)="addMedicalHistory()" class="history-form">
+        <label>Diagnosis:</label>
+        <textarea [(ngModel)]="newHistory.diagnosis" name="diagnosis" maxlength="1000" required></textarea>
+  
+        <label>Allergies:</label>
+        <textarea [(ngModel)]="newHistory.allergies" name="allergies" maxlength="500"></textarea>
+  
+        <label>Breathing Conditions:</label>
+        <textarea [(ngModel)]="newHistory.breathingConditions" name="breathingConditions" maxlength="500"></textarea>
+  
+        <label>Past Treatments:</label>
+        <textarea [(ngModel)]="newHistory.pastTreatments" name="pastTreatments" maxlength="1000"></textarea>
+  
+        <button type="submit">Add History</button>
+      </form>
+    </div>
+  
+    <div class="right-panel">
+      <h3>Previous Records</h3>
+      <ul>
+        <li *ngFor="let history of medicalHistories">
+          <strong>Diagnosis:</strong> {{ history.diagnosis }}<br />
+          <strong>Allergies:</strong> {{ history.allergies }}<br />
+          <strong>Breathing Conditions:</strong> {{ history.breathingConditions }}<br />
+          <strong>Past Treatments:</strong> {{ history.pastTreatments }}<br />
+          <hr />
+        </li>
+      </ul>
+    </div>
+  </div>
+   -->
+
+
+   <div class="split-container">
+    <div class="left-panel">
+      <h2>Medical History</h2>
+      <form (ngSubmit)="addMedicalHistory()" class="history-form">
+        <label>Diagnosis:</label>
+        <textarea [(ngModel)]="newHistory.diagnosis" name="diagnosis" maxlength="1000" required></textarea>
+  
+        <label>Allergies:</label>
+        <textarea [(ngModel)]="newHistory.allergies" name="allergies" maxlength="500"></textarea>
+  
+        <label>Breathing Conditions:</label>
+        <textarea [(ngModel)]="newHistory.breathingConditions" name="breathingConditions" maxlength="500"></textarea>
+  
+        <label>Past Treatments:</label>
+        <textarea [(ngModel)]="newHistory.pastTreatments" name="pastTreatments" maxlength="1000"></textarea>
+  
+        <button type="submit">{{ editingHistoryId ? 'Update History' : 'Add History' }}</button>
+      </form>
+    </div>
+  
+    <div class="right-panel">
+      <h3>Previous Records</h3>
+      <ul>
+        <li *ngFor="let history of medicalHistories">
+          <strong>Diagnosis:</strong> {{ history.diagnosis }}<br />
+          <strong>Allergies:</strong> {{ history.allergies }}<br />
+          <strong>Breathing Conditions:</strong> {{ history.breathingConditions }}<br />
+          <strong>Past Treatments:</strong> {{ history.pastTreatments }}<br />
+          <button (click)="editMedicalHistory(history)">Edit</button>
+          <button class="delete-button" (click)="deleteMedicalHistory(history.medicalHistoryId)">Delete</button>
+
+          <hr />
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+
+   <!-- <div class="split-container">
+    <div class="left-panel">
+      <h2>Medical History</h2>
+      <form (ngSubmit)="addMedicalHistory()" class="history-form">
+        <label>Diagnosis:</label>
+        <textarea [(ngModel)]="newHistory.diagnosis" name="diagnosis" maxlength="1000" required></textarea>
+  
+        <label>Allergies:</label>
+        <textarea [(ngModel)]="newHistory.allergies" name="allergies" maxlength="500"></textarea>
+  
+        <label>Breathing Conditions:</label>
+        <textarea [(ngModel)]="newHistory.breathingConditions" name="breathingConditions" maxlength="500"></textarea>
+  
+        <label>Past Treatments:</label>
+        <textarea [(ngModel)]="newHistory.pastTreatments" name="pastTreatments" maxlength="1000"></textarea>
+  
+        <button type="submit">Add History</button>
+      </form>
+    </div>
+  
+    <div class="right-panel">
+      <h3>Previous Records</h3>
+      <ul>
+        <li *ngFor="let history of medicalHistories">
+          <strong>Diagnosis:</strong> {{ history.diagnosis }}<br />
+          <strong>Allergies:</strong> {{ history.allergies }}<br />
+          <strong>Breathing Conditions:</strong> {{ history.breathingConditions }}<br />
+          <strong>Past Treatments:</strong> {{ history.pastTreatments }}<br />
+          <button (click)="deleteMedicalHistory(history.medicalHistoryId)">Delete</button>
+          <hr />
+        </li>
+      </ul>
+    </div>
+  </div>
+   -->

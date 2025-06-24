@@ -1,0 +1,56 @@
+<!-- <header>
+    <nav>
+      <h1>Whospitals</h1>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/doctors">Doctors</a></li>
+      </ul>
+    </nav>
+  </header>
+   -->
+
+   <!-- <header>
+    <nav>
+      <h1>Whospitals</h1>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/doctors">Doctors</a></li>
+        <li><a routerLink="/login">login</a></li>
+      </ul>
+    </nav>
+  </header> -->
+<!--   
+  <header>
+    <nav>
+      <h1>Whospitals</h1>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/doctors">Doctors</a></li>
+        <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+        <li *ngIf="authService.isLoggedIn()"><button (click)="logout()">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+   -->
+
+   <header>
+    <nav>
+      <h1>Whospitals</h1>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/doctors">Doctors</a></li>
+        <li (click)="goToProfile()" style="cursor: pointer;">Profile</li>
+        <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+        <li *ngIf="authService.isLoggedIn()">
+          <a (click)="goToDashboard()">Dashboard</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()">
+          <button (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+

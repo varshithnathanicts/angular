@@ -1,0 +1,13 @@
+<h2>Meet Our Doctors</h2>
+<ul *ngIf="doctorList.length > 0; else loading">
+  <li *ngFor="let doctor of doctorList">
+    <strong>{{ doctor.name }}</strong><br>
+    Gender: {{ doctor.gender }}<br>
+    Specialization: {{ doctor.specialization }}<br>
+    Qualification: {{ doctor.qualification }}<br>
+    <button (click)="goToBookAppointment(doctor)">Book Appointment</button>
+  </li>
+</ul>
+<ng-template #loading>
+  <p>Loading doctors...</p>
+</ng-template>
