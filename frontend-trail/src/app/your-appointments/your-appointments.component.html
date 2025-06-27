@@ -36,8 +36,39 @@
   <p>No appointments found.</p>
 </ng-template> -->
 
-
 <h2>Your Appointments</h2>
+
+<ul *ngIf="appointments.length > 0">
+  <li *ngFor="let appt of appointments">
+    <strong>{{ appt.date }} at {{ appt.time }}</strong> -
+    <span [ngClass]="appt.status.toLowerCase()">{{ appt.status }}</span>
+
+    <div style="margin-top: 10px;">
+      <button 
+        (click)="editAppointment(appt)" 
+        [disabled]="appt.status === 'BOOKED'">
+        Edit
+      </button>
+
+      <button 
+        (click)="cancelAppointment(appt.appointmentId)" 
+        [disabled]="appt.status === 'BOOKED'">
+        Cancel
+      </button>
+
+      <button 
+        (click)="viewPrescription(appt.appointmentId)" 
+        [disabled]="appt.status !== 'BOOKED'">
+        View Prescription
+      </button>
+    </div>
+  </li>
+</ul>
+
+<p *ngIf="appointments.length === 0">No appointments found.</p>
+
+
+<!-- <h2>Your Appointments</h2>
 
 <div *ngIf="appointments.length > 0; else noAppointments">
   <ul>
@@ -47,7 +78,6 @@
       <p><strong>Status:</strong> {{ appt.status }}</p>
       <p><strong>Doctor:</strong> {{ appt.doctor.name }} ({{ appt.doctor.specialization }})</p>
 
-      <!-- Replace 'appt.id' with the correct field name -->
 <button *ngIf="appt.status === 'COMPLETED' || appt.status === 'BOOKED'" (click)="viewPrescription(appt.appointmentId)">
     View Prescription
   </button>
@@ -55,7 +85,7 @@
       
     </li>
   </ul>
-</div>
+</div> -->
 
 <ng-template #noAppointments>
   <p>No appointments found.</p>

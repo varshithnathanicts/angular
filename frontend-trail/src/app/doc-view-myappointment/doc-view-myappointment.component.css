@@ -1,0 +1,44 @@
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  li:hover {
+    transform: scale(1.02);
+  }
+  
+  span.booked {
+    color: green;
+    font-weight: bold;
+  }
+  
+  span.cancelled {
+    color: red;
+    font-weight: bold;
+  }
+  
+  strong {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,12 @@
+<h2>Patient Medical History</h2>
+
+<ul *ngIf="medicalHistories.length > 0">
+  <li *ngFor="let history of medicalHistories">
+    <strong>Diagnosis:</strong> {{ history.diagnosis }}<br>
+    <strong>Allergies:</strong> {{ history.allergies }}<br>
+    <strong>Breathing Conditions:</strong> {{ history.breathingConditions }}<br>
+    <strong>Past Treatments:</strong> {{ history.pastTreatments }}<br><br>
+  </li>
+</ul>
+
+<p *ngIf="medicalHistories.length === 0">No medical history found for this patient.</p>

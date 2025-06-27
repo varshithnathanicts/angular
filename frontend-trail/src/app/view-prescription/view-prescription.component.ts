@@ -36,7 +36,7 @@ export class ViewPrescriptionComponent implements OnInit {
   
 
   fetchPrescription(): void {
-    const url = `http://localhost:8089/Whospitals/consultations/${this.appointmentId}`;
+    const url = `http://localhost:8089/Whospitals/consultations/view/${this.appointmentId}`;
     this.http.get<any>(url).subscribe({
       next: (data) => {
         this.notes = data.notes;

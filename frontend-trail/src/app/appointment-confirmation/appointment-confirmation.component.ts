@@ -49,7 +49,7 @@ export class AppointmentConfirmationComponent implements OnInit {
   submitAppointment(): void {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    this.http.post('http://localhost:8086/Whospitals/profile/appointments/book', this.appointmentRequest, { headers })
+    this.http.post('http://localhost:8086/Whospitals/appointments/book', this.appointmentRequest, { headers })
       .subscribe({
         next: (response) => {
           console.log('Appointment booked:', response);

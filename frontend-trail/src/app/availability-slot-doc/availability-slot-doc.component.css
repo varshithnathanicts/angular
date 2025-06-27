@@ -1,0 +1,32 @@
+.slot-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+  }
+  
+  .doctor-blocked {
+    background-color: #ff7043;
+    color: white;
+    cursor: not-allowed;
+  }
+  
+  .patient-blocked {
+    background-color: #fbc02d;
+    color: black;
+    cursor: not-allowed;
+  }
+  
+  .free-slot {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+  }
+  

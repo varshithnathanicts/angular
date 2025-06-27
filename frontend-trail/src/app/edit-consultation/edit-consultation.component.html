@@ -1,0 +1,14 @@
+<h2>Edit Consultation</h2>
+<form (ngSubmit)="updateConsultation()">
+  <label>Notes:</label>
+  <textarea [(ngModel)]="consultationData.notes" name="notes" required></textarea>
+
+  <div *ngFor="let item of prescriptionList; let i = index">
+    <label>Medicine {{ i + 1 }}</label>
+    <input [(ngModel)]="item.key" [name]="'key' + i" placeholder="Medicine name" />
+    <input [(ngModel)]="item.value" [name]="'value' + i" placeholder="Dosage" />
+  </div>
+
+  <button type="button" (click)="addMedicine()">Add Medicine</button>
+  <button type="submit">Update</button>
+</form>

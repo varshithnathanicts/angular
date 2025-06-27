@@ -18,7 +18,7 @@ export class CreateAppointmentComponent {
   }
 
   fetchDoctors() {
-    this.http.get<{ [key: string]: any[] }>('http://localhost:8082/Whospitals/profile/doctorsList')
+    this.http.get<{ [key: string]: any[] }>('http://localhost:8082/Whospitals/user/profile/doctorsList')
       .subscribe({
         next: (response) => {
           this.doctors = response['List of all doctors: '] || [];

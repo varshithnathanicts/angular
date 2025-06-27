@@ -1,0 +1,31 @@
+<h2>Create Consultation</h2>
+
+<form (ngSubmit)="submitConsultation()">
+  <label for="notes">Notes:</label>
+  <textarea id="notes" [(ngModel)]="consultation.notes" name="notes" required></textarea>
+
+  <h3>Prescription</h3>
+  <div *ngFor="let key of prescriptionKeys; let i = index; trackBy: trackByIndex" style="margin-bottom: 10px;">
+    <input
+      [(ngModel)]="prescriptionKeys[i]"
+      [name]="'medicine' + i"
+      placeholder="Medicine Name"
+      required
+    />
+    <input
+      [(ngModel)]="prescriptionValues[i]"
+      [name]="'dosage' + i"
+      placeholder="Dosage"
+      required
+    />
+    <button type="button" (click)="removePrescriptionField(i)">Remove</button>
+  </div>
+
+  <button type="button" (click)="addPrescriptionField()">Add Medicine</button>
+
+  <br /><br />
+
+  <button type="submit">Submit Consultation</button>
+</form>
+
+

@@ -1,0 +1,115 @@
+<!-- <h2>My Appointments</h2>
+
+<ul *ngIf="appointments.length > 0">
+  <li *ngFor="let appt of appointments">
+    <strong>{{ appt.patientName }}</strong> - 
+    {{ appt.date }} at {{ appt.time }} 
+    <span [ngClass]="appt.status.toLowerCase()">{{ appt.status }}</span>
+  </li>
+</ul>
+
+<p *ngIf="appointments.length === 0">No appointments found.</p> -->
+
+<!-- <h2>My Appointments</h2>
+
+<ul *ngIf="appointments.length > 0">
+  <li *ngFor="let appt of appointments">
+    <strong>{{ appt.patientName }}</strong> - 
+    {{ appt.date }} at {{ appt.time }} 
+    <span [ngClass]="appt.status.toLowerCase()">{{ appt.status }}</span>
+
+    <div style="margin-top: 10px;">
+      <label for="followup-{{appt.appointmentId}}">Follow-up:</label>
+      <select id="followup-{{appt.appointmentId}}" [(ngModel)]="appt.followupSelection">
+        <option [ngValue]="true">Yes</option>
+        <option [ngValue]="false">No</option>
+      </select>
+      
+      <button (click)="submitFollowup(appt.appointmentId, appt.followupSelection)">Submit Follow-up</button>
+    </div>
+    <div style="margin-top: 10px;">
+        <button (click)="goToConsultation(appt.appointmentId)">Consultation</button>
+      </div>
+      
+
+    <div style="margin-top: 10px;">
+      <button (click)="markComplete(appt.appointmentId)">Mark as Complete</button>
+    </div>
+  </li>
+</ul>
+
+<p *ngIf="appointments.length === 0">No appointments found.</p> -->
+
+
+<!-- <h2>My Appointments</h2>
+
+<ul *ngIf="appointments.length > 0">
+  <li *ngFor="let appt of appointments">
+    <strong>{{ appt.patientName }}</strong> - 
+    {{ appt.date }} at {{ appt.time }} 
+    <span [ngClass]="appt.status.toLowerCase()">{{ appt.status }}</span>
+
+    <div style="margin-top: 10px;">
+      <label for="followup-{{appt.appointmentId}}">Follow-up:</label>
+      <select id="followup-{{appt.appointmentId}}" [(ngModel)]="appt.followupSelection">
+        <option [ngValue]="true">Yes</option>
+        <option [ngValue]="false">No</option>
+      </select>
+      <button (click)="submitFollowup(appt.appointmentId, appt.followupSelection)">Submit Follow-up</button>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <button (click)="goToConsultation(appt.appointmentId)">Consultation</button>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <button (click)="editConsultation(appt.consultationId)">Edit Consultation</button>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <button (click)="markComplete(appt.appointmentId)">Mark as Complete</button>
+    </div>
+  </li>
+</ul>
+
+<p *ngIf="appointments.length === 0">No appointments found.</p> -->
+
+<h2>My Appointments</h2>
+<ul *ngIf="appointments.length > 0">
+  <li *ngFor="let appt of appointments">
+    <strong>{{ appt.patientName }}</strong> - 
+    {{ appt.date }} at {{ appt.time }} 
+    <span [ngClass]="appt.status.toLowerCase()">{{ appt.status }}</span>
+
+    <!-- Follow-up Dropdown -->
+    <div style="margin-top: 10px;">
+      <label for="followup-{{appt.appointmentId}}">Follow-up:</label>
+      <select id="followup-{{appt.appointmentId}}" [(ngModel)]="appt.followupSelection">
+        <option [ngValue]="true">Yes</option>
+        <option [ngValue]="false">No</option>
+      </select>
+      <button (click)="submitFollowup(appt.appointmentId, appt.followupSelection)">Submit Follow-up</button>
+    </div>
+
+    <!-- Consultation Button -->
+    <div style="margin-top: 10px;">
+      <button (click)="goToConsultation(appt.appointmentId)">Consultation</button>
+    </div>
+
+    <!-- Edit Consultation Button -->
+    <div style="margin-top: 10px;">
+      <button (click)="editConsultationByAppointment(appt.appointmentId)">Edit Consultation</button>
+    </div>
+
+    <!-- Mark Complete Button -->
+    <div style="margin-top: 10px;">
+      <button (click)="markComplete(appt.appointmentId)">Mark as Complete</button>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <button (click)="viewMedicalHistory(appt.patientId)">View Medical History</button>
+      </div>
+      
+  </li>
+</ul>
+<p *ngIf="appointments.length === 0">No appointments found.</p>

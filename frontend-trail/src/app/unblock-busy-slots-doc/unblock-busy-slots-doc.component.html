@@ -1,0 +1,12 @@
+<h3>Select a date to manage blocked slots:</h3>
+<input type="date" [min]="minDate" (change)="onDateChange($event)" />
+
+<div *ngIf="selectedDate">
+  <h4>Blocked Slots for {{ selectedDate }}:</h4>
+  <div class="slot-buttons">
+    <div *ngFor="let slot of blockedSlots" class="slot-item">
+      <span>{{ slot }}</span>
+      <button (click)="unblockSlot(slot)">Unblock</button>
+    </div>
+  </div>
+</div>

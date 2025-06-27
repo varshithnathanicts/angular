@@ -27,7 +27,7 @@ export class YourAppointmentsComponent implements OnInit {
   loadAppointments(): void {
     const patientId = this.authService.getPatientId();
     if (patientId) {
-      this.http.get<any[]>(`http://localhost:8086/Whospitals/profile/appointments/patient/${patientId}`)
+      this.http.get<any[]>(`http://localhost:8086/Whospitals/appointments/patient/${patientId}`)
         .subscribe({
           next: (data) => {
             console.log('Appointments:', data); // 👈 Add this line

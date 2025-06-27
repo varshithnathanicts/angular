@@ -51,7 +51,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     const userId = this.authService.getUserId();
     if (userId) {
-      this.http.get(`http://localhost:8082/Whospitals/profile/myProfile/${userId}`)
+      this.http.get(`http://localhost:8082/Whospitals/user/profile/${userId}`)
         .subscribe({
           next: (data: any) => {
             this.profile = data['Profile details (PATIENT) '] || data['Profile details (DOCTOR) '];
@@ -74,7 +74,7 @@ export class ProfileComponent implements OnInit {
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    this.http.put(`http://localhost:8082/Whospitals/profile/myProfile/update/${userId}`, this.profile, {
+    this.http.put(`http://localhost:8082/Whospitals/user/profile/update/${userId}`, this.profile, {
       headers,
       responseType: 'text' // Avoids JSON parsing error
     }).subscribe({
@@ -100,7 +100,7 @@ export class ProfileComponent implements OnInit {
       return;
     }
 
-    this.http.delete(`http://localhost:8082/Whospitals/profile/deleteProfile/${userId}`, {
+    this.http.delete(`http://localhost:8082/Whospitals/user/profile/deleteProfile/${userId}`, {
       observe: 'response'
     }).subscribe({
       next: () => {

@@ -138,7 +138,7 @@ export class UpdateAppointmentComponent implements OnInit {
   loadAppointments(): void {
     const patientId = this.authService.getPatientId();
     if (patientId) {
-      this.http.get<any[]>(`http://localhost:8086/Whospitals/profile/appointments/patient/${patientId}`)
+      this.http.get<any[]>(`http://localhost:8086/Whospitals/appointments/patient/${patientId}`)
         .subscribe({
           next: (data) => {
             this.appointments = data.filter(appt => appt.status !== 'Cancelled');
@@ -155,7 +155,7 @@ export class UpdateAppointmentComponent implements OnInit {
     const confirmCancel = confirm('Are you sure you want to cancel this appointment?');
     if (!confirmCancel) return;
   
-    const url = `http://localhost:8086/Whospitals/profile/appointments/cancel/${appointmentId}`;
+    const url = `http://localhost:8086/Whospitals/appointments/cancel/${appointmentId}`;
     this.http.put(url, {}).subscribe({
       next: () => {
         alert('Appointment cancelled successfully.');

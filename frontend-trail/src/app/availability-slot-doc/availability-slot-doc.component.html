@@ -1,0 +1,29 @@
+<h3>Select a date:</h3>
+<input type="date" [min]="minDate" (change)="onDateChange($event)" />
+
+<div *ngIf="selectedDate">
+  <h4>Slots for {{ selectedDate }}:</h4>
+
+  <div class="slot-section">
+    <h5>Doctor Blocked Slots</h5>
+    <div class="slot-buttons">
+      <button *ngFor="let slot of doctorBlockedSlots" class="doctor-blocked" disabled>
+        {{ slot }}
+      </button>
+    </div>
+
+    <h5>Patient Blocked Slots</h5>
+    <div class="slot-buttons">
+      <button *ngFor="let slot of patientBlockedSlots" class="patient-blocked" disabled>
+        {{ slot }}
+      </button>
+    </div>
+
+    <h5>Free Slots</h5>
+    <div class="slot-buttons">
+      <button *ngFor="let slot of freeSlots" class="free-slot">
+        {{ slot }}
+      </button>
+    </div>
+  </div>
+</div>

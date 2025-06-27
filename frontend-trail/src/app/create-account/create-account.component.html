@@ -1,0 +1,69 @@
+<h2>Create Account</h2>
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <input
+    [(ngModel)]="user.name"
+    name="name"
+    placeholder="Name"
+    required
+    minlength="3"
+    #nameRef="ngModel"
+  /><br>
+  <div *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)" class="error">
+    <div *ngIf="nameRef.errors?.['required']">Name is required</div>
+    <div *ngIf="nameRef.errors?.['minlength']">Min 3 characters</div>
+  </div>
+
+  <select [(ngModel)]="user.gender" name="gender" required>
+    <option value="" disabled>Select Gender</option>
+    <option *ngFor="let g of genders" [value]="g">{{ g }}</option>
+  </select><br>
+
+  <input
+    [(ngModel)]="user.phone"
+    name="phone"
+    placeholder="Phone"
+    required
+    pattern="^[0-9]{10}$"
+    #phone="ngModel"
+  /><br>
+  <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error">
+    <div *ngIf="phone.errors?.['required']">Phone number is required</div>
+    <div *ngIf="phone.errors?.['pattern']">Phone number must be exactly 10 digits</div>
+  </div>
+
+  <input
+    [(ngModel)]="user.email"
+    name="email"
+    placeholder="Email"
+    required
+    email
+    #email="ngModel"
+  /><br>
+  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+    <div *ngIf="email.errors?.['required']">Email is required</div>
+    <div *ngIf="email.errors?.['email']">Please enter a valid email address</div>
+  </div>
+
+  <input [(ngModel)]="user.password" name="password" type="password" placeholder="Password" required /><br>
+
+  <select [(ngModel)]="user.role" name="role" required>
+    <option value="" disabled>Select Role</option>
+    <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+  </select><br>
+
+  <div *ngIf="user.role === 'DOCTOR'">
+    <input [(ngModel)]="user.specialization" name="specialization" placeholder="specialization" /><br>
+    <input [(ngModel)]="user.qualification" name="qualification" placeholder="qualification" /><br>
+    <input [(ngModel)]="user.roomNumber" name="roomNumber" placeholder="Room Number" /><br>
+  </div>
+
+  <div *ngIf="user.role === 'PATIENT'">
+    <input [(ngModel)]="user.disease" name="disease" placeholder="disease" /><br>
+    <input [(ngModel)]="user.place" name="place" placeholder="place" /><br>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+</form>

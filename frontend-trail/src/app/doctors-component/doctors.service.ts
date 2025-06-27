@@ -36,7 +36,7 @@ export class DoctorService {
 
   getDoctorsSignal() {
     return toSignal(
-      this.http.get<{ [key: string]: Doctor[] }>(`${this.baseUrl}/Whospitals/profile/doctorsList`).pipe(
+      this.http.get<{ [key: string]: Doctor[] }>(`${this.baseUrl}/Whospitals/user/profile/doctorsList`).pipe(
         tap(data => console.log('Doctors response:', data)),
         catchError(error => {
           console.error('Error fetching doctors:', error);
