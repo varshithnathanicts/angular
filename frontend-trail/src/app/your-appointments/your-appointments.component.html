@@ -36,7 +36,31 @@
   <p>No appointments found.</p>
 </ng-template> -->
 
+
 <h2>Your Appointments</h2>
+
+<div *ngIf="appointments.length === 0">No appointments found.</div>
+
+<div *ngFor="let appt of appointments" class="appointment-card">
+  <p><strong>Appointment ID:</strong> {{ appt.appointmentId }}</p>
+  <p><strong>Date:</strong> {{ appt.appointmentDate }}</p>
+  <p><strong>Time:</strong> {{ appt.appointmentTime }}</p>
+  <p><strong>Status:</strong> {{ appt.status }}</p>
+
+  <h4>Doctor Info</h4>
+  <p><strong>Name:</strong> {{ appt.doctor?.name }}</p>
+  <p><strong>Specialization:</strong> {{ appt.doctor?.specialization }}</p>
+  <p><strong>Room Number:</strong> {{ appt.doctor?.roomNumber }}</p>
+
+  <button (click)="editAppointment(appt)">Edit</button>
+  <button (click)="cancelAppointment(appt.appointmentId)">Cancel</button>
+  <button (click)="viewPrescription(appt.appointmentId)">View Prescription</button>
+
+  <hr />
+</div>
+
+
+<!-- <h2>Your Appointments</h2>
 
 <ul *ngIf="appointments.length > 0">
   <li *ngFor="let appt of appointments">
@@ -65,7 +89,7 @@
   </li>
 </ul>
 
-<p *ngIf="appointments.length === 0">No appointments found.</p>
+<p *ngIf="appointments.length === 0">No appointments found.</p> -->
 
 
 <!-- <h2>Your Appointments</h2>
@@ -87,6 +111,6 @@
   </ul>
 </div> -->
 
-<ng-template #noAppointments>
+<!-- <ng-template #noAppointments>
   <p>No appointments found.</p>
-</ng-template>
+</ng-template> -->
